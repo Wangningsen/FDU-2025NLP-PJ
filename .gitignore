@@ -1,0 +1,91 @@
+# =====================================================================
+# Python cache and build
+# =====================================================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.pkl
+*.log
+*.tmp
+
+build/
+dist/
+*.egg-info/
+
+# =====================================================================
+# Virtual environments
+# =====================================================================
+.venv/
+venv/
+env/
+.conda/
+.envrc
+
+# =====================================================================
+# Editors and OS files
+# =====================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# =====================================================================
+# Project data directories
+# =====================================================================
+
+# Raw data (do not push original benchmark or private data)
+# data/raw/*
+# !data/raw/.gitkeep
+
+# Processed data (large intermediate files)
+# data/processed/*
+# !data/processed/.gitkeep
+
+# Vector indices and embeddings
+indices/*
+!indices/.gitkeep
+
+# Results and eval outputs (usually not versioned)
+# results/*
+# !results/.gitkeep
+
+# Logs and checkpoints
+logs/
+checkpoints/
+*.ckpt
+*.pt
+*.bin
+*.h5
+
+# =====================================================================
+# Machine learning caches
+# =====================================================================
+# Hugging Face
+.huggingface/
+huggingface/
+hf_cache/
+cache/
+.cache/
+
+# Weights and Biases
+wandb/
+
+# Other experiment outputs
+tensorboard/
+runs/
+
+# =====================================================================
+# Secrets and credentials
+# =====================================================================
+.env
+.env.*
+*.pem
+*.key
+*token*
+*credentials*
+
+pipeline.md
