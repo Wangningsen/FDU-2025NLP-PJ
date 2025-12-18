@@ -102,6 +102,9 @@ def build_qa_messages(
     system_prompt = (
         "You are a careful assistant that answers questions based ONLY on the "
         "provided memory snippets from a long conversation.\n"
+        "If the memories are insufficient or conflicting, you must say you are "
+        "not sure and explain briefly.\n"
+        "Do not invent facts that are not supported by the memories.\n"
     )
 
     # 3) 类型相关的推理提示
@@ -131,7 +134,10 @@ def build_qa_messages(
         )
     elif qtype == QuestionType.OTHER:
         extra_instructions = (
-            "The question may be open-ended or potentially unanswerable from the memories alone.\n"
+            "The question may be unanswerable from the memories alone. "
+            "If the memories do not clearly contain the required information, "
+            "explicitly say that the question cannot be answered from the "
+            "given memories.\n"
         )
 
     # 4) 为了 BLEU/F1 的输出格式约束
